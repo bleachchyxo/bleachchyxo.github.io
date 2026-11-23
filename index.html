@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
   <meta name="theme-color" content="#ffffff" />
   <title>GA Cleaning</title>
 
@@ -19,25 +22,20 @@
       font-family: Arial, sans-serif;
     }
 
-    /* White strip behind the phone's status icons */
-    .safe-area-top {
+    .header-wrapper {
       position: sticky;
       top: 0;
-      z-index: 11;
-      height: env(safe-area-inset-top, 0px);
+      z-index: 10;
+      padding-top: env(safe-area-inset-top, 0px);
       background: #ffffff;
     }
 
     .top-bar {
-      position: sticky;
-      top: env(safe-area-inset-top, 0px);
-      z-index: 10;
       height: 64px;
       display: flex;
       align-items: center;
       padding: 0 28px;
       background: #dde7fe;
-      box-shadow: none;
     }
 
     .site-title {
@@ -50,10 +48,10 @@
   </style>
 </head>
 <body>
-  <div class="safe-area-top" aria-hidden="true"></div>
-
-  <header class="top-bar">
-    <h1 class="site-title">GA Cleaning</h1>
+  <header class="header-wrapper">
+    <div class="top-bar">
+      <h1 class="site-title">GA Cleaning</h1>
+    </div>
   </header>
 </body>
 </html>
