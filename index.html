@@ -18,7 +18,7 @@
       margin: 0;
       padding-top: 55px;
       font-family: Arial, sans-serif;
-      background-color: #dde7fe;
+      background-color: #959bb1;
     }
 
     .top-bar {
@@ -27,7 +27,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(221, 231, 254, 0.88);
+      background: rgba(149, 155, 177, 0.88);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       color: #0a4dff;
@@ -110,6 +110,7 @@
 
     .image-container {
       line-height: 0;
+      overflow: hidden;
     }
 
     .full-width-image {
@@ -118,6 +119,8 @@
       height: clamp(260px, 45vw, 600px);
       object-fit: cover;
       object-position: center top;
+      filter: blur(2px);
+      transform: scale(1.02);
     }
 
     .image-title {
