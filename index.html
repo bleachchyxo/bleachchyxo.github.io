@@ -122,17 +122,37 @@
 
     .image-title {
       position: absolute;
-      top: 8%;
+      top: 7%;
       left: 0;
       right: 0;
       width: 100%;
       margin: 0;
       color: white;
-      font-size: clamp(32px, 5vw, 64px);
+      font-size: clamp(48px, 7vw, 88px);
       font-weight: 400;
       line-height: 1.2;
       text-align: center;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .image-description {
+      position: absolute;
+      top: 27%;
+      left: 50%;
+      width: min(900px, 86%);
+      transform: translateX(-50%);
+      margin: 0;
+      color: white;
+      font-size: clamp(24px, 3.5vw, 42px);
+      line-height: 1.5;
+      text-align: center;
+      direction: rtl;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    #services,
+    #contact {
+      scroll-margin-top: 70px;
     }
 
     @media (max-width: 600px) {
@@ -153,8 +173,18 @@
       }
 
       .full-width-image {
-        height: auto;
-        object-fit: contain;
+        height: 440px;
+        object-fit: cover;
+      }
+
+      .image-title {
+        top: 6%;
+      }
+
+      .image-description {
+        top: 25%;
+        width: 88%;
+        font-size: 25px;
       }
     }
   </style>
@@ -180,7 +210,7 @@
 
     <img
       class="cleaning-image"
-      src="https://static.vecteezy.com/system/resources/thumbnails/065/584/996/small/cleaning-supplies-and-tools-in-a-bright-blue-bucket-on-a-transparent-background-ideal-for-home-organization-and-cleaning-cleaning-supplies-and-tools-in-bucket-on-transparent-background-free-png.png"
+      src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241105%2Fourmid%2Fpngtree-colorfull-cleaning-supplies-in-white-bucket-stock-on-transparent-background-png-image_14277593.png&f=1&nofb=1&ipt=74d96f5fcd254d2cce0ccdfbfc015ca1e48c854adbcf558e27acef5c3ca3cde&ipo=images"
       alt="Mop and bucket"
     >
 
@@ -189,10 +219,15 @@
     <div class="image-container full-bleed">
       <img
         class="full-width-image"
-        src="https://m-y-s.com/HE/Pictures/X_20240506120500741242_big.jpg"
+        src="https://kikabraz.com/wp-content/uploads/2021/03/04-2-2560x1482.jpg"
         alt="Cleaning service"
       >
+
       <h2 class="image-title" lang="he" dir="rtl">מי אנחנו</h2>
+
+      <p class="image-description" lang="he" dir="rtl">
+        אנו מתמחים בניקיון בנייני מגורים ומשרדים. הצוות שלנו מעניק שירות מקצועי ואמין, ופועל כדי להבטיח שכל לקוחותינו יהיו מרוצים מהתוצאות.
+      </p>
     </div>
 
     <div class="thin-white-bar full-bleed"></div>
