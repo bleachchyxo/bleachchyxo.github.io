@@ -55,7 +55,7 @@
       text-decoration: none;
     }
 
-    /* Mobile hamburger button */
+    /* Mobile hamburger */
     .mobile-menu {
       display: none;
       border: none;
@@ -68,7 +68,7 @@
       line-height: 1;
     }
 
-    /* Hero image */
+    /* Hero section */
     .hero-image {
       position: relative;
       width: 100%;
@@ -103,7 +103,6 @@
       pointer-events: none;
     }
 
-    /* Hero content */
     .hero-content {
       position: absolute;
       z-index: 1;
@@ -133,7 +132,7 @@
 
     .hero-content .description {
       margin: 0;
-      color: #ececee !important;
+      color: #ececee;
       font-size: clamp(18px, 2.4vw, 28px);
       line-height: 1.4;
     }
@@ -188,22 +187,6 @@
       background: rgba(255, 255, 255, 0.24);
     }
 
-    /* Main content */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 24px;
-    }
-
-    .card {
-      min-height: 300px;
-      margin: 24px 0;
-      padding: 32px;
-      border-radius: 16px;
-      background: white;
-      box-shadow: 0 10px 30px rgba(40, 55, 90, 0.14);
-    }
-
     /* About section */
     .about-heading {
       text-align: right;
@@ -237,16 +220,33 @@
       text-align: right;
     }
 
+    /* Both About paragraphs are now #ececee */
     .about-description p {
       margin: 0 0 20px;
-      color: #202a3a;
+      color: #ececee !important;
       font-size: clamp(21px, 2.6vw, 30px);
       font-weight: 400;
       line-height: 1.7;
       text-align: right;
     }
 
-    /* Desktop logo positioning */
+    /* Main content */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    .card {
+      min-height: 300px;
+      margin: 24px 0;
+      padding: 32px;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(40, 55, 90, 0.14);
+    }
+
+    /* Desktop logo */
     @media (min-width: 768px) {
       .logo {
         transform: translateX(55px);
@@ -268,7 +268,6 @@
         margin-left: auto;
       }
 
-      /* Logo left, menu right */
       .top-bar nav {
         direction: ltr;
       }
@@ -299,7 +298,7 @@
 
       .hero-content .description {
         font-size: 22px;
-        color: #ececee !important;
+        color: #ececee;
       }
 
       .hero-buttons {
@@ -314,7 +313,6 @@
         font-size: 17px;
       }
 
-      /* Mobile About section */
       .about-heading {
         margin-top: 35px;
         padding: 0 20px;
@@ -331,6 +329,7 @@
       .about-description p {
         font-size: 21px;
         line-height: 1.6;
+        color: #ececee !important;
       }
     }
   </style>
@@ -344,14 +343,12 @@
         <img src="ga-icon.png" alt="GA Cleaning">
       </div>
 
-      <!-- Desktop navigation -->
       <div class="links">
         <a href="#">ראשי</a>
         <a href="#about">אודות</a>
         <a href="#contact">צור קשר</a>
       </div>
 
-      <!-- Mobile hamburger icon -->
       <button class="mobile-menu" aria-label="פתח תפריט" type="button">
         ☰
       </button>
@@ -370,7 +367,7 @@
       </p>
 
       <p class="description">
-        שירותי ניקיון שוטפים לבנייני מגורים, עם הקפדה על איכות, אמינות ושירות אישי
+        .שירותי ניקיון שוטפים לבנייני מגורים, עם הקפדה על איכות, אמינות ושירות אישי
       </p>
 
       <div class="hero-buttons">
