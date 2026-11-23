@@ -45,7 +45,15 @@
     }
 
     main {
-      padding: 24px 80px;
+      padding: 0 80px;
+    }
+
+    .intro-section {
+      height: clamp(260px, 45vw, 600px);
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .welcome {
@@ -94,6 +102,10 @@
       width: min(380px, 100%);
       height: auto;
       margin: 28px auto;
+    }
+
+    .page-content {
+      padding: 24px 0;
     }
 
     .full-bleed {
@@ -163,7 +175,11 @@
 
     @media (max-width: 600px) {
       main {
-        padding: 24px 20px;
+        padding: 0 20px;
+      }
+
+      .intro-section {
+        height: 440px;
       }
 
       .top-bar {
@@ -207,19 +223,21 @@
   </div>
 
   <main>
-    <h1 class="welcome" lang="he" dir="rtl">ברוכים הבאים</h1>
-    <p class="subtitle" lang="he" dir="rtl">שירות איכותי ומקצועי.</p>
+    <section class="intro-section">
+      <h1 class="welcome" lang="he" dir="rtl">ברוכים הבאים</h1>
+      <p class="subtitle" lang="he" dir="rtl">שירות איכותי ומקצועי.</p>
 
-    <div class="button-row">
-      <a class="button primary" href="#services" lang="he" dir="rtl">למידע נוסף</a>
-      <a class="button" href="#contact" lang="he" dir="rtl">צרו קשר</a>
-    </div>
+      <div class="button-row">
+        <a class="button primary" href="#services" lang="he" dir="rtl">למידע נוסף</a>
+        <a class="button" href="#contact" lang="he" dir="rtl">צרו קשר</a>
+      </div>
 
-    <img
-      class="cleaning-image"
-      src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241105%2Fourmid%2Fpngtree-colorfull-cleaning-supplies-in-white-bucket-stock-on-transparent-background-png-image_14277593.png&f=1&nofb=1&ipt=74d96f5fcd254d2cce0ccdfbfc015ca1e48c854adbcf558e27acef5c3ca3cde&ipo=images"
-      alt="Mop and bucket"
-    >
+      <img
+        class="cleaning-image"
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241105%2Fourmid%2Fpngtree-colorfull-cleaning-supplies-in-white-bucket-stock-on-transparent-background-png-image_14277593.png&f=1&nofb=1&ipt=74d96f5fcd254d2cce0ccdfbfc015ca1e48c854adbcf558e27acef5c3ca3cde&ipo=images"
+        alt="Mop and bucket"
+      >
+    </section>
 
     <div class="thin-white-bar full-bleed"></div>
 
@@ -239,21 +257,23 @@
 
     <div class="thin-white-bar full-bleed"></div>
 
-    <p>We help keep homes and workplaces clean and comfortable.</p>
+    <div class="page-content">
+      <p>We help keep homes and workplaces clean and comfortable.</p>
 
-    <h2 id="services">Our services</h2>
-    <p>Regular cleaning, deep cleaning, and more.</p>
+      <h2 id="services">Our services</h2>
+      <p>Regular cleaning, deep cleaning, and more.</p>
 
-    <h2>Why choose us?</h2>
-    <p>We take pride in careful, reliable work.</p>
+      <h2>Why choose us?</h2>
+      <p>We take pride in careful, reliable work.</p>
 
-    <h2>More about us</h2>
-    <p>We make it easy to enjoy a cleaner space.</p>
-    <p>Our team pays attention to the little details.</p>
-    <p>We work hard to leave every room looking fresh.</p>
+      <h2>More about us</h2>
+      <p>We make it easy to enjoy a cleaner space.</p>
+      <p>Our team pays attention to the little details.</p>
+      <p>We work hard to leave every room looking fresh.</p>
 
-    <h2 id="contact">Contact us</h2>
-    <p>Thanks for visiting our website!</p>
+      <h2 id="contact">Contact us</h2>
+      <p>Thanks for visiting our website!</p>
+    </div>
   </main>
 </body>
 </html>
