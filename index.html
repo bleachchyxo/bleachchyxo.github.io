@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
@@ -384,6 +385,52 @@
         font-size: 16px;
       }
     }
+
+    /* Floating WhatsApp button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 4px solid #1daa61;
+      border-radius: 50%;
+
+      background: #ffffff;
+      color: #1daa61;
+
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+
+      box-shadow: 0 0 12px 4px #d9fdd3;
+
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Mobile WhatsApp button */
+    @media (max-width: 520px) {
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        bottom: 18px;
+        right: 18px;
+        font-size: 18px;
+      }
+    }
+
   </style>
 </head>
 
@@ -473,6 +520,17 @@
       <p>הוסיפו כאן את פרטי יצירת הקשר.</p>
     </section>
   </main>
+
+  <!-- Floating WhatsApp button -->
+  <a
+    href="https://wa.me/YOURNUMBER"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+  >
+    WA
+  </a>
 
 </body>
 </html>
