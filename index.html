@@ -127,6 +127,7 @@
     }
 
     .image-container {
+      position: relative;
       line-height: 0;
       overflow: hidden;
     }
@@ -143,10 +144,10 @@
 
     .image-title {
       position: absolute;
-      top: 7%;
-      left: 0;
-      right: 0;
-      width: 100%;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0;
       color: white;
       font-family: Arial, sans-serif;
@@ -159,10 +160,10 @@
 
     .image-description {
       position: absolute;
-      top: 27%;
+      top: 50%;
       left: 50%;
       width: min(900px, 86%);
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       margin: 0;
       color: white;
       font-family: Arial, sans-serif;
@@ -199,13 +200,11 @@
         padding: 24px 0;
       }
 
-      .welcome,
-      .image-container .image-title {
+      .welcome {
         font-size: 42px;
       }
 
-      .subtitle,
-      .image-container .image-description {
+      .subtitle {
         font-size: 27px;
       }
 
@@ -215,16 +214,17 @@
       }
 
       .full-width-image {
-        height: 560px;
+        height: 500px;
         object-fit: cover;
+        object-position: center top;
       }
 
-      .image-title {
-        top: 6%;
+      .image-container .image-title {
+        font-size: 42px;
       }
 
-      .image-description {
-        top: 25%;
+      .image-container .image-description {
+        font-size: 27px;
         width: 88%;
       }
     }
@@ -295,4 +295,5 @@
   </main>
 </body>
 </html>
+
 
