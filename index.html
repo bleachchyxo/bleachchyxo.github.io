@@ -26,7 +26,12 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      padding-top: env(safe-area-inset-top, 0px);
+      background: #ffffff;
+    }
+
+    /* White strip above the colored bar */
+    .status-strip {
+      height: 44px;
       background: #ffffff;
     }
 
@@ -49,6 +54,7 @@
 </head>
 <body>
   <header class="header-wrapper">
+    <div class="status-strip" aria-hidden="true"></div>
     <div class="top-bar">
       <h1 class="site-title">GA Cleaning</h1>
     </div>
