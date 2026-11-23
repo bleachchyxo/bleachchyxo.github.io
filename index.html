@@ -48,9 +48,14 @@
       padding: 0 80px;
     }
 
+    .stage-stack {
+      display: grid;
+      grid-template-rows: minmax(260px, 1fr) 12px minmax(260px, 1fr);
+      min-height: clamp(532px, calc(90vw + 12px), 1212px);
+    }
+
     .intro-section {
-      min-height: clamp(260px, 45vw, 600px);
-      height: auto;
+      min-width: 0;
       padding: 24px 0;
       display: flex;
       flex-direction: column;
@@ -106,10 +111,6 @@
       margin: 28px auto;
     }
 
-    .page-content {
-      padding: 24px 0;
-    }
-
     .full-bleed {
       position: relative;
       left: 50%;
@@ -122,19 +123,28 @@
       background-color: white;
     }
 
+    .stage-stack > .thin-white-bar {
+      grid-row: 2;
+    }
+
     .image-container {
-      line-height: 0;
+      position: relative;
+      left: 50%;
+      grid-row: 3;
+      width: 100vw;
+      min-width: 0;
+      height: 100%;
+      transform: translateX(-50%);
       overflow: hidden;
     }
 
     .full-width-image {
       display: block;
       width: 100%;
-      height: clamp(260px, 45vw, 600px);
-      object-fit: cover;
-      object-position: center top;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
       filter: blur(2px);
-      transform: scale(1.02);
     }
 
     .image-title {
@@ -170,6 +180,10 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     }
 
+    .page-content {
+      padding: 24px 0;
+    }
+
     #services,
     #contact {
       scroll-margin-top: 70px;
@@ -180,9 +194,8 @@
         padding: 0 20px;
       }
 
-      .intro-section {
-        min-height: 440px;
-        height: auto;
+      .stage-stack {
+        min-height: 892px;
       }
 
       .top-bar {
@@ -190,23 +203,18 @@
       }
 
       .welcome,
-      .image-container .image-title {
+      .image-title {
         font-size: 42px;
       }
 
       .subtitle,
-      .image-container .image-description {
+      .image-description {
         font-size: 27px;
       }
 
       .cleaning-image {
         width: min(260px, 85%);
         margin: 16px auto;
-      }
-
-      .full-width-image {
-        height: 440px;
-        object-fit: cover;
       }
 
       .image-title {
@@ -231,36 +239,38 @@
   </div>
 
   <main>
-    <section class="intro-section">
-      <h1 class="welcome" lang="he" dir="rtl">ברוכים הבאים</h1>
-      <p class="subtitle" lang="he" dir="rtl">שירות איכותי ומקצועי.</p>
+    <div class="stage-stack">
+      <section class="intro-section">
+        <h1 class="welcome" lang="he" dir="rtl">ברוכים הבאים</h1>
+        <p class="subtitle" lang="he" dir="rtl">שירות איכותי ומקצועי.</p>
 
-      <div class="button-row">
-        <a class="button primary" href="#services" lang="he" dir="rtl">למידע נוסף</a>
-        <a class="button" href="#contact" lang="he" dir="rtl">צרו קשר</a>
+        <div class="button-row">
+          <a class="button primary" href="#services" lang="he" dir="rtl">למידע נוסף</a>
+          <a class="button" href="#contact" lang="he" dir="rtl">צרו קשר</a>
+        </div>
+
+        <img
+          class="cleaning-image"
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241105%2Fourmid%2Fpngtree-colorfull-cleaning-supplies-in-white-bucket-stock-on-transparent-background-png-image_14277593.png&f=1&nofb=1&ipt=74d96f5fcd254d2cce0ccdfbfc015ca1e48c854adbcf558e27acef5c3ca3cde&ipo=images"
+          alt="Mop and bucket"
+        >
+      </section>
+
+      <div class="thin-white-bar full-bleed"></div>
+
+      <div class="image-container">
+        <img
+          class="full-width-image"
+          src="https://eldargroup.b-cdn.net/wp-content/uploads/2021/10/page-4-1.png"
+          alt="Cleaning service"
+        >
+
+        <h2 class="image-title" lang="he" dir="rtl">מי אנחנו</h2>
+
+        <p class="image-description" lang="he" dir="rtl">
+          אנו מתמחים בניקיון בנייני מגורים ומשרדים. הצוות שלנו מעניק שירות מקצועי ואמין, ופועל כדי להבטיח שכל לקוחותינו יהיו מרוצים מהתוצאות.
+        </p>
       </div>
-
-      <img
-        class="cleaning-image"
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241105%2Fourmid%2Fpngtree-colorfull-cleaning-supplies-in-white-bucket-stock-on-transparent-background-png-image_14277593.png&f=1&nofb=1&ipt=74d96f5fcd254d2cce0ccdfbfc015ca1e48c854adbcf558e27acef5c3ca3cde&ipo=images"
-        alt="Mop and bucket"
-      >
-    </section>
-
-    <div class="thin-white-bar full-bleed"></div>
-
-    <div class="image-container full-bleed">
-      <img
-        class="full-width-image"
-        src="https://eldargroup.b-cdn.net/wp-content/uploads/2021/10/page-4-1.png"
-        alt="Cleaning service"
-      >
-
-      <h2 class="image-title" lang="he" dir="rtl">מי אנחנו</h2>
-
-      <p class="image-description" lang="he" dir="rtl">
-        אנו מתמחים בניקיון בנייני מגורים ומשרדים. הצוות שלנו מעניק שירות מקצועי ואמין, ופועל כדי להבטיח שכל לקוחותינו יהיו מרוצים מהתוצאות.
-      </p>
     </div>
 
     <div class="thin-white-bar full-bleed"></div>
