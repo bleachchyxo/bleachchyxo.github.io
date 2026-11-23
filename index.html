@@ -201,6 +201,48 @@
       box-shadow: 0 10px 30px rgba(40, 55, 90, 0.14);
     }
 
+    /* About section */
+    .about-heading {
+      text-align: right;
+      direction: rtl;
+      margin: 45px auto 60px;
+      padding: 0 24px;
+      max-width: 1000px;
+    }
+
+    .about-heading h2 {
+      margin: 0;
+      color: #99e65c;
+      font-size: clamp(16px, 2vw, 24px);
+      font-weight: 600;
+      line-height: 1.3;
+      text-align: right;
+    }
+
+    .about-heading h3 {
+      margin: 14px 0 28px;
+      color: #000;
+      font-size: clamp(26px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    .about-description {
+      max-width: 900px;
+      margin: 0;
+      text-align: right;
+    }
+
+    .about-description p {
+      margin: 0 0 18px;
+      color: #202a3a;
+      font-size: clamp(18px, 2.4vw, 28px);
+      font-weight: 400;
+      line-height: 1.7;
+      text-align: right;
+    }
+
     /* Desktop logo positioning */
     @media (min-width: 768px) {
       .logo {
@@ -214,12 +256,10 @@
         padding: 14px 18px;
       }
 
-      /* Hide desktop navigation */
       .links {
         display: none;
       }
 
-      /* Show hamburger icon */
       .mobile-menu {
         display: block;
         margin-left: auto;
@@ -230,7 +270,6 @@
         direction: ltr;
       }
 
-      /* Shorter hero section on phones */
       .hero-image {
         height: calc(90svh - 100px);
         min-height: 0;
@@ -270,11 +309,25 @@
         min-height: 54px;
         font-size: 17px;
       }
+
+      .about-heading {
+        margin-top: 35px;
+        padding: 0 20px;
+      }
+
+      .about-heading h3 {
+        font-size: 30px;
+      }
+
+      .about-description p {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <header class="top-bar">
     <nav>
       <div class="logo">
@@ -300,13 +353,18 @@
 
     <div class="hero-content">
       <h1>ניקיון בניינים מקצועי באזור הקריות</h1>
-      <p class="main-text">הבניין שלכם מתוחזק בלי דאגות</p>
+
+      <p class="main-text">
+        הבניין שלכם מתוחזק בלי דאגות
+      </p>
+
       <p class="description">
         שירותי ניקיון שוטפים לבנייני מגורים, עם הקפדה על איכות, אמינות ושירות אישי
       </p>
 
       <div class="hero-buttons">
         <a class="hero-button primary" href="#services">למידע נוסף</a>
+
         <a
           class="hero-button secondary"
           href="https://wa.me/YOURNUMBER"
@@ -317,12 +375,30 @@
     </div>
   </section>
 
-  <main>
-    <section class="card" id="about">
-      <h2>אודותינו</h2>
-      <p>הוסיפו כאן את תוכן האתר.</p>
-    </section>
+  <!-- About us section -->
+  <section class="about-heading" id="about">
 
+    <h2>מי אנחנו</h2>
+
+    <h3>
+      GA Cleaning מתמחה בניקיון שוטף של בנייני מגורים באזור הקריות
+    </h3>
+
+    <div class="about-description">
+      <p>
+        אנו מעניקים לוועדי בתים שירות מקצועי, אמין וקבוע,
+        תוך הקפדה על ניקיון, סדר ותחזוקה של השטחים המשותפים בבניין.
+      </p>
+
+      <p>
+        המטרה שלנו היא להפוך את תחזוקת הניקיון בבניין שלכם
+        לפשוטה, נוחה וללא דאגות.
+      </p>
+    </div>
+
+  </section>
+
+  <main>
     <section class="card" id="services">
       <h2>השירותים שלנו</h2>
       <p>הוסיפו כאן את השירותים שלכם.</p>
@@ -333,5 +409,6 @@
       <p>הוסיפו כאן את פרטי יצירת הקשר.</p>
     </section>
   </main>
+
 </body>
 </html>
