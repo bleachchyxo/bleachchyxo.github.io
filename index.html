@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA Cleaning</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: clip;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 55px;
+      font-family: Arial, sans-serif;
+      background-color: #dde7fe;
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(221, 231, 254, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #0a4dff;
+      padding: 16px 24px 16px 80px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .message-bar {
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    main {
+      padding: 0 80px;
+    }
+
+    .intro-section {
+      min-height: calc(clamp(260px, 45vw, 600px) - 54px);
+      height: auto;
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .welcome {
+      margin: 0;
+      font-size: 55px;
+      font-weight: bold;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 35px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #0a4dff;
+      border-radius: 999px;
+      color: #0a4dff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .button.primary,
+    .button:hover,
+    .button:focus-visible {
+      background-color: #0a4dff;
+      color: white;
+    }
+
+    .cleaning-image {
+      display: block;
+      flex: 0 0 auto;
+      width: min(380px, 100%);
+      height: auto;
+      margin: 28px auto;
+    }
+
+    .page-content {
+      padding: 24px 0;
+    }
+
+    .full-bleed {
+      position: relative;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+    }
+
+    .thin-white-bar {
+      height: 12px;
+      background-color: white;
+    }
+
+    .image-container {
+      position: relative;
+      line-height: 0;
+      overflow: hidden;
+    }
+
+    .full-width-image {
+      display: block;
+      width: 100%;
+      height: clamp(260px, 45vw, 600px);
+      object-fit: cover;
+      object-position: center top;
+      filter: blur(2px);
+      transform: scale(1.02);
+    }
+
+    .image-title {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 55px;
+      font-weight: bold;
+      line-height: 1.3;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .image-description {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(900px, 86%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: center;
+      direction: rtl;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    #services,
+    #contact {
+      scroll-margin-top: 70px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0 20px;
+      }
+
+      .top-bar {
+        padding-left: 24px;
+      }
+
+      .message-bar {
+        height: 72px;
+      }
+
+      .intro-section {
+        min-height: 488px;
+        height: auto;
+        justify-content: flex-start;
+        padding: 24px 0;
+      }
+
+      .welcome {
+        font-size: 42px;
+      }
+
+      .subtitle {
+        font-size: 27px;
+      }
+
+      .cleaning-image {
+        width: min(220px, 85%);
+        margin: 16px auto;
+      }
+
+      .full-width-image {
+        height: 500px;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .image-container .image-title {
+        font-size: 42px;
+      }
+
+      .image-container .image-description {
+        font-size: 27px;
+        width: 88%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-bar">
+    GA Cleaning
+  </header>
+
+  <div class="message-bar" lang="he" dir="rtl">
+    מעוניינים להזמין את חבילות הניקיון שלנו?
+  </div>
+
+  <main>
+    <section class="intro-section">
+      <h1 class="welcome" lang="he" dir="rtl">ברוכים הבאים</h1>
+      <p class="subtitle" lang="he" dir="rtl">שירות איכותי ומקצועי.</p>
+
+      <div class="button-row">
+        <a class="button primary" href="#services" lang="he" dir="rtl">למידע נוסף</a>
+        <a class="button" href="#contact" lang="he" dir="rtl">צרו קשר</a>
+      </div>
+
+      <img
+        class="cleaning-image"
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241105%2Fourmid%2Fpngtree-colorfull-cleaning-supplies-in-white-bucket-stock-on-transparent-background-png-image_14277593.png&f=1&nofb=1&ipt=74d96f5fcd254d2cce0ccdfbfc015ca1e48c854adbcf558e27acef5c3ca3cde&ipo=images"
+        alt="Mop and bucket"
+      >
+    </section>
+
+    <div class="thin-white-bar full-bleed"></div>
+
+    <div class="image-container full-bleed">
+      <img
+        class="full-width-image"
+        src="https://eldargroup.b-cdn.net/wp-content/uploads/2021/10/page-4-1.png"
+        alt="Cleaning service"
+      >
+
+      <h2 class="image-title" lang="he" dir="rtl">מי אנחנו</h2>
+
+      <p class="image-description" lang="he" dir="rtl">
+        אנו מתמחים בניקיון בנייני מגורים ומשרדים. הצוות שלנו מעניק שירות מקצועי ואמין, ופועל כדי להבטיח שכל לקוחותינו יהיו מרוצים מהתוצאות.
+      </p>
+    </div>
+
+    <div class="thin-white-bar full-bleed"></div>
+
+    <div class="page-content">
+      <p>We help keep homes and workplaces clean and comfortable.</p>
+
+      <h2 id="services">Our services</h2>
+      <p>Regular cleaning, deep cleaning, and more.</p>
+
+      <h2>Why choose us?</h2>
+      <p>We take pride in careful, reliable work.</p>
+
+      <h2>More about us</h2>
+      <p>We make it easy to enjoy a cleaner space.</p>
+      <p>Our team pays attention to the little details.</p>
+      <p>We work hard to leave every room looking fresh.</p>
+
+      <h2 id="contact">Contact us</h2>
+      <p>Thanks for visiting our website!</p>
+    </div>
+  </main>
+</body>
+</html>
+
