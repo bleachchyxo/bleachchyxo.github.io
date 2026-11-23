@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
   <title>GA Cleaning</title>
 
@@ -22,25 +19,16 @@
       font-family: Arial, sans-serif;
     }
 
-    .header-wrapper {
+    .top-bar {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: #ffffff;
-    }
-
-    /* White strip above the colored bar */
-    .status-strip {
-      height: 44px;
-      background: #ffffff;
-    }
-
-    .top-bar {
       height: 64px;
       display: flex;
       align-items: center;
       padding: 0 28px;
       background: #dde7fe;
+      box-shadow: none;
     }
 
     .site-title {
@@ -53,11 +41,8 @@
   </style>
 </head>
 <body>
-  <header class="header-wrapper">
-    <div class="status-strip" aria-hidden="true"></div>
-    <div class="top-bar">
-      <h1 class="site-title">GA Cleaning</h1>
-    </div>
+  <header class="top-bar">
+    <h1 class="site-title">GA Cleaning</h1>
   </header>
 </body>
 </html>
