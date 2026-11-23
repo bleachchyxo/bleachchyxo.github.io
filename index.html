@@ -144,10 +144,10 @@
 
     .image-title {
       position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      transform: translate(-50%, calc(-50% - 60px));
       margin: 0;
       color: white;
       font-family: Arial, sans-serif;
@@ -163,7 +163,7 @@
       top: 50%;
       left: 50%;
       width: min(900px, 86%);
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, 10px);
       margin: 0;
       color: white;
       font-family: Arial, sans-serif;
@@ -219,13 +219,15 @@
         object-position: center top;
       }
 
-      .image-container .image-title {
+      .image-title {
         font-size: 42px;
+        transform: translate(-50%, calc(-50% - 70px));
       }
 
-      .image-container .image-description {
+      .image-description {
         font-size: 27px;
         width: 88%;
+        transform: translate(-50%, 10px);
       }
     }
   </style>
