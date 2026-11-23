@@ -37,7 +37,7 @@
 
     .logo img {
       display: block;
-      height: 40px;
+      height: 30px;
       width: auto;
     }
 
@@ -64,6 +64,12 @@
       border-radius: 16px;
       background: white;
       box-shadow: 0 10px 30px rgba(40, 55, 90, 0.14);
+    }
+
+    @media (min-width: 768px) {
+      .logo {
+        transform: translateX(50px);
+      }
     }
 
     @media (max-width: 520px) {
@@ -95,7 +101,7 @@
   <main>
     <section class="card">
       <h1>Welcome</h1>
-      <p>Scroll down to see the top ba stay in place.</p>
+      <p>Scroll down to see the top bar stay in place.</p>
     </section>
 
     <section class="card">
