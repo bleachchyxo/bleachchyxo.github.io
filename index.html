@@ -295,6 +295,28 @@
       color: #060C13;
     }
 
+    /* Quote process section */
+    .quote-process-section {
+      min-height: 300px;
+      padding: 55px 24px 70px;
+      background: linear-gradient(
+        135deg,
+        #254570 0%,
+        #2b4c76 50%,
+        #31547e 100%
+      );
+      direction: rtl;
+      text-align: center;
+    }
+
+    .quote-process-section h2 {
+      margin: 0;
+      color: #99e65c;
+      font-size: clamp(16px, 2vw, 24px);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
     /* Desktop logo */
     @media (min-width: 768px) {
       .logo {
@@ -411,6 +433,16 @@
         padding: 0 20px;
         font-size: 24px;
         text-align: center;
+      }
+
+      /* Mobile quote process section */
+      .quote-process-section {
+        min-height: 260px;
+        padding: 45px 20px 60px;
+      }
+
+      .quote-process-section h2 {
+        font-size: 20px;
       }
     }
 
@@ -551,6 +583,11 @@
 
     </main>
 
+  </section>
+
+  <!-- Quote process section -->
+  <section class="quote-process-section">
+    <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
   </section>
 
   <!-- Floating WhatsApp button -->
