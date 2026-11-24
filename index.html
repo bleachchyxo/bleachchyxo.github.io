@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
@@ -44,6 +43,7 @@
       width: auto;
     }
 
+    /* Desktop navigation */
     .links {
       display: flex;
       direction: rtl;
@@ -55,6 +55,7 @@
       text-decoration: none;
     }
 
+    /* Mobile hamburger */
     .mobile-menu {
       display: none;
       border: none;
@@ -74,7 +75,11 @@
       height: clamp(240px, 40vw, 520px);
       overflow: hidden;
       border-bottom: 24px solid transparent;
-      border-image: linear-gradient(to right, #4a80c4, #24446f) 1;
+      border-image: linear-gradient(
+        to right,
+        #4a80c4,
+        #24446f
+      ) 1;
     }
 
     .hero-image > img {
@@ -251,12 +256,13 @@
       text-align: center;
     }
 
-    /* Services catalog */
+    /* Services and contact background */
     .services-section {
       background: #dde7fe;
       padding: 65px 0 40px;
     }
 
+    /* Centered green heading */
     .services-heading {
       max-width: 900px;
       margin: 0 auto 30px;
@@ -267,13 +273,14 @@
       text-align: center;
     }
 
-    /* Main content and cards */
+    /* Main content */
     main {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
+    /* Cards */
     .card {
       min-height: 300px;
       margin: 24px 0;
@@ -395,7 +402,7 @@
         font-size: 16px;
       }
 
-      /* Mobile services */
+      /* Mobile services section */
       .services-section {
         padding: 45px 0 30px;
       }
@@ -521,31 +528,30 @@
 
   </section>
 
-  <!-- Services catalog -->
+  <!-- Services and contact: everything inside blue background -->
   <section class="services-section">
 
     <h2 class="services-heading">קטלוג השירותים</h2>
 
     <main>
 
+      <!-- Service card -->
       <section class="card" id="services">
         <h2>השירותים שלנו</h2>
         <p>הוסיפו כאן את השירותים שלכם.</p>
       </section>
 
-      <!-- Place all additional service cards here -->
+      <!-- Add all additional service cards here -->
+
+      <!-- Contact card -->
+      <section class="card" id="contact">
+        <h2>צור קשר</h2>
+        <p>הוסיפו כאן את פרטי יצירת הקשר.</p>
+      </section>
 
     </main>
 
   </section>
-
-  <!-- Contact section -->
-  <main>
-    <section class="card" id="contact">
-      <h2>צור קשר</h2>
-      <p>הוסיפו כאן את פרטי יצירת הקשר.</p>
-    </section>
-  </main>
 
   <!-- Floating WhatsApp button -->
   <a
