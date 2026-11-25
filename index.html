@@ -326,22 +326,30 @@
         direction: ltr;
       }
 
-      /* Extra height keeps the hero text and buttons inside the image area. */
+      /* On mobile, the hero grows with its content instead of clipping it. */
       .hero-image {
         height: auto;
-        min-height: max(700px, calc(100svh - 100px));
+        min-height: 0;
+        padding: 40px 0;
+        overflow: hidden;
       }
 
       .hero-image > img {
         position: absolute;
         inset: 0;
+        width: 100%;
+        height: 100%;
         object-position: 65% 20%;
+        transform: scale(1.03);
       }
 
       .hero-content {
-        top: 50%;
-        right: 6%;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
         width: 88%;
+        margin: 0 auto;
       }
 
       .hero-content h1 {
@@ -360,7 +368,7 @@
       .hero-buttons {
         flex-direction: column;
         gap: 12px;
-        margin-top: 24px;
+        margin: 24px auto 0;
       }
 
       .hero-button {
