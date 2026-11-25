@@ -248,7 +248,7 @@
       text-align: center;
     }
 
-    /* Services and contact background */
+    /* Services section */
     .services-section {
       background: #dde7fe;
       padding: 65px 0 40px;
@@ -264,7 +264,6 @@
       text-align: center;
     }
 
-    /* NEW: Main services title */
     .services-main-title {
       margin: 0 auto 18px;
       padding: 0 24px;
@@ -275,7 +274,6 @@
       text-align: center;
     }
 
-    /* NEW: Services subtitle */
     .services-subtitle {
       margin: 0 auto 35px;
       padding: 0 24px;
@@ -292,18 +290,27 @@
       padding: 0 24px;
     }
 
+    /* Six blank service cards */
     .card {
+      position: relative;
       min-height: 300px;
       margin: 24px 0;
       padding: 32px;
       border-radius: 16px;
-      background: white;
+      background: #ffffff;
       box-shadow: 0 10px 30px rgba(40, 55, 90, 0.14);
+      overflow: hidden;
     }
 
-    .card h2,
-    .card p {
-      color: #060C13;
+    /* Green line with a small white gap on the left */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 24px);
+      height: 3px;
+      background: #1daa61;
     }
 
     /* Quote process section */
@@ -328,6 +335,7 @@
       line-height: 1.3;
     }
 
+    /* Desktop logo */
     @media (min-width: 768px) {
       .logo {
         transform: translateX(55px);
@@ -395,6 +403,7 @@
         font-size: 17px;
       }
 
+      /* Mobile About section */
       .about-heading {
         margin-top: 65px;
         padding: 0 20px;
@@ -415,6 +424,7 @@
         color: #757584;
       }
 
+      /* Mobile badges */
       .about-badges {
         display: grid;
         grid-template-columns: repeat(2, max-content);
@@ -432,6 +442,7 @@
         font-size: 16px;
       }
 
+      /* Mobile services section */
       .services-section {
         padding: 45px 0 30px;
       }
@@ -442,7 +453,6 @@
         text-align: center;
       }
 
-      /* NEW: Mobile services text */
       .services-main-title {
         font-size: 30px;
         padding: 0 20px;
@@ -451,6 +461,12 @@
       .services-subtitle {
         font-size: 20px;
         padding: 0 20px;
+      }
+
+      .card {
+        min-height: 260px;
+        margin: 20px 0;
+        padding: 24px;
       }
 
       .quote-process-section {
@@ -490,6 +506,7 @@
       transform: scale(1.1);
     }
 
+    /* Mobile WhatsApp button */
     @media (max-width: 520px) {
       .whatsapp-float {
         width: 54px;
@@ -499,6 +516,7 @@
         font-size: 18px;
       }
     }
+
   </style>
 </head>
 
@@ -575,40 +593,35 @@
 
   </section>
 
-  <!-- Services and contact -->
+  <!-- Services section -->
   <section class="services-section">
 
     <h2 class="services-heading">קטלוג השירותים</h2>
 
-    <!-- NEW TEXT -->
     <h3 class="services-main-title">
       כל מה שהבניין שלכם צריך
     </h3>
 
     <p class="services-subtitle">
-      בחרו שירות כדי להכיר את היתרונות שלו
+      בחרו שירות כדי להכיר את היתרונות שלו.
     </p>
 
-    <main>
+    <main id="services">
 
-      <!-- Service card -->
-      <section class="card" id="services">
-        <h2>השירותים שלנו</h2>
-        <p>הוסיפו כאן את השירותים שלכם.</p>
-      </section>
-
-      <!-- Contact card -->
-      <section class="card" id="contact">
-        <h2>צור קשר</h2>
-        <p>הוסיפו כאן את פרטי יצירת הקשר.</p>
-      </section>
+      <!-- Six blank cards -->
+      <section class="card"></section>
+      <section class="card"></section>
+      <section class="card"></section>
+      <section class="card"></section>
+      <section class="card"></section>
+      <section class="card"></section>
 
     </main>
 
   </section>
 
   <!-- Quote process section -->
-  <section class="quote-process-section">
+  <section class="quote-process-section" id="contact">
     <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
   </section>
 
