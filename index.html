@@ -43,7 +43,6 @@
       width: auto;
     }
 
-    /* Desktop navigation */
     .links {
       display: flex;
       direction: rtl;
@@ -55,7 +54,6 @@
       text-decoration: none;
     }
 
-    /* Mobile hamburger */
     .mobile-menu {
       display: none;
       border: none;
@@ -74,15 +72,12 @@
       width: 100%;
       height: clamp(240px, 40vw, 520px);
       overflow: hidden;
-      border-bottom: 24px solid transparent;
-      border-image: linear-gradient(
-        to right,
-        #4a80c4,
-        #24446f
-      ) 1;
+      border-bottom: 24px solid #24446f;
     }
 
     .hero-image > img {
+      position: absolute;
+      inset: 0;
       display: block;
       width: 100%;
       height: 100%;
@@ -95,6 +90,7 @@
       content: "";
       position: absolute;
       inset: 0;
+      z-index: 0;
       background: linear-gradient(
         120deg,
         rgba(39, 104, 185, 0.35),
@@ -256,13 +252,12 @@
       text-align: center;
     }
 
-    /* Services and contact background */
+    /* Services */
     .services-section {
       background: #dde7fe;
       padding: 65px 0 40px;
     }
 
-    /* Centered green heading */
     .services-heading {
       max-width: 900px;
       margin: 0 auto 30px;
@@ -273,14 +268,12 @@
       text-align: center;
     }
 
-    /* Main content */
     main {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Cards */
     .card {
       min-height: 300px;
       margin: 24px 0;
@@ -295,7 +288,7 @@
       color: #060C13;
     }
 
-    /* Quote process section */
+    /* Quote process */
     .quote-process-section {
       min-height: 300px;
       padding: 55px 24px 70px;
@@ -326,6 +319,7 @@
 
     /* Mobile layout */
     @media (max-width: 520px) {
+
       .top-bar {
         padding: 14px 18px;
       }
@@ -344,20 +338,32 @@
         direction: ltr;
       }
 
+      /* FIXED MOBILE HERO */
       .hero-image {
-        height: calc(90svh - 100px);
-        min-height: 0;
-        max-height: 800px;
+        height: auto;
+        min-height: 90svh;
+        padding: 55px 0 45px;
+        border-bottom: 12px solid #24446f;
+        overflow: hidden;
       }
 
       .hero-image > img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
         object-position: 65% 20%;
+        object-fit: cover;
       }
 
       .hero-content {
-        top: 50%;
-        right: 6%;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
         width: 88%;
+        margin: 0 auto;
+        text-align: right;
       }
 
       .hero-content h1 {
@@ -373,10 +379,13 @@
         color: #ececee;
       }
 
+      /* Buttons stay inside hero */
       .hero-buttons {
+        display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-top: 50px;
+        margin: 35px auto 0;
+        width: 100%;
       }
 
       .hero-button {
@@ -385,7 +394,7 @@
         font-size: 17px;
       }
 
-      /* Mobile About section */
+      /* About */
       .about-heading {
         margin-top: 65px;
         padding: 0 20px;
@@ -406,7 +415,7 @@
         color: #757584;
       }
 
-      /* Mobile badges */
+      /* Badges */
       .about-badges {
         display: grid;
         grid-template-columns: repeat(2, max-content);
@@ -424,7 +433,7 @@
         font-size: 16px;
       }
 
-      /* Mobile services section */
+      /* Services */
       .services-section {
         padding: 45px 0 30px;
       }
@@ -435,7 +444,7 @@
         text-align: center;
       }
 
-      /* Mobile quote process section */
+      /* Quote process */
       .quote-process-section {
         min-height: 260px;
         padding: 45px 20px 60px;
@@ -443,6 +452,15 @@
 
       .quote-process-section h2 {
         font-size: 20px;
+      }
+
+      /* WhatsApp */
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        bottom: 18px;
+        left: 18px;
+        font-size: 18px;
       }
     }
 
@@ -473,7 +491,6 @@
       transform: scale(1.1);
     }
 
-    /* Mobile WhatsApp button */
     @media (max-width: 520px) {
       .whatsapp-float {
         width: 54px;
@@ -535,7 +552,7 @@
     </div>
   </section>
 
-  <!-- About us section -->
+  <!-- About us -->
   <section class="about-heading" id="about">
 
     <h2>מי אנחנו</h2>
@@ -560,22 +577,18 @@
 
   </section>
 
-  <!-- Services and contact: everything inside blue background -->
+  <!-- Services and contact -->
   <section class="services-section">
 
     <h2 class="services-heading">קטלוג השירותים</h2>
 
     <main>
 
-      <!-- Service card -->
       <section class="card" id="services">
         <h2>השירותים שלנו</h2>
         <p>הוסיפו כאן את השירותים שלכם.</p>
       </section>
 
-      <!-- Add all additional service cards here -->
-
-      <!-- Contact card -->
       <section class="card" id="contact">
         <h2>צור קשר</h2>
         <p>הוסיפו כאן את פרטי יצירת הקשר.</p>
@@ -585,12 +598,12 @@
 
   </section>
 
-  <!-- Quote process section -->
+  <!-- Quote process -->
   <section class="quote-process-section">
     <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
   </section>
 
-  <!-- Floating WhatsApp button -->
+  <!-- Floating WhatsApp -->
   <a
     href="https://wa.me/YOURNUMBER"
     class="whatsapp-float"
