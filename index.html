@@ -298,17 +298,17 @@
       padding: 32px;
       border-radius: 16px;
       background: #ffffff;
-      box-shadow: 0 10px 30px rgba(40, 55, 90, 0.14);
+      box-shadow: 0 3px 12px rgba(40, 55, 90, 0.08);
       overflow: hidden;
     }
 
-    /* Green line with a small white gap on the left */
+    /* Green line lowered below the top rounded corner */
     .card::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: calc(100% - 24px);
+      top: 16px;
+      left: 16px;
+      right: 0;
       height: 3px;
       background: #1daa61;
     }
