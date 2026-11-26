@@ -301,13 +301,14 @@
       overflow: hidden;
     }
 
-    /* Fixed green line: right edge to 16px before left edge */
+    /* Full-width green line */
     .card::before {
       content: "";
       position: absolute;
       top: 16px;
       right: 0;
-      left: 16px;
+      left: 0;
+      width: 100%;
       height: 3px;
       background: #1daa61;
     }
