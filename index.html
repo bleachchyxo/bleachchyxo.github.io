@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -65,7 +64,7 @@ main{max-width:900px;margin:auto;padding:0 24px}
 .quote-process-section{
 min-height:420px;
 padding:65px 24px 70px;
-background:linear-gradient(135deg,#2a4b75 0%,#2c4d77 55%,#304f79 100%);
+background:linear-gradient(135deg,#2a4b75 0%,#304f79 50%,#365982 100%);
 direction:rtl;
 text-align:right;
 }
@@ -127,6 +126,44 @@ transition:background-color .2s,transform .2s;
 .quote-button:hover{
 background:#dde7fe;
 transform:translateY(-2px);
+}
+
+/* Process step */
+.process-step{
+display:flex;
+direction:rtl;
+align-items:flex-start;
+gap:28px;
+margin-top:90px;
+text-align:right;
+}
+
+.step-number{
+flex-shrink:0;
+margin:0;
+color:#99e65c;
+font-size:clamp(20px,2vw,24px);
+font-weight:600;
+line-height:1.4;
+}
+
+.step-content{
+text-align:right;
+}
+
+.step-title{
+margin:0 0 12px;
+color:white;
+font-size:clamp(26px,2.6vw,32px);
+font-weight:700;
+line-height:1.3;
+}
+
+.step-description{
+margin:0;
+color:#ececee;
+font-size:clamp(21px,2.2vw,25px);
+line-height:1.6;
 }
 
 /* WhatsApp */
@@ -199,6 +236,25 @@ width:100%;
 min-height:54px;
 padding:12px 24px;
 font-size:17px;
+}
+
+.process-step{
+gap:18px;
+margin-top:90px;
+}
+
+.step-number{
+font-size:20px;
+}
+
+.step-title{
+font-size:25px;
+margin-bottom:10px;
+}
+
+.step-description{
+font-size:18px;
+line-height:1.6;
 }
 
 .whatsapp-float{bottom:18px;left:18px;width:54px;height:54px;font-size:18px}
@@ -313,6 +369,7 @@ font-size:17px;
 
 <section class="quote-process-section" id="contact">
 <div class="quote-content">
+
 <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
 
 <h3>צעדים ברורים לניהול כל שירות</h3>
@@ -326,6 +383,15 @@ font-size:17px;
 קבלת הצעת מחיר
 </a>
 </div>
+
+<div class="process-step">
+<p class="step-number">01</p>
+<div class="step-content">
+<h3 class="step-title">יוצרים קשר</h3>
+<p class="step-description">פונים אלינו דרך WhatsApp או בטלפון.</p>
+</div>
+</div>
+
 </div>
 </section>
 
