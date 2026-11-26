@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
@@ -302,13 +301,13 @@
       overflow: hidden;
     }
 
-    /* Green line lowered below the top rounded corner */
+    /* Fixed green line: right edge to 16px before left edge */
     .card::before {
       content: "";
       position: absolute;
       top: 16px;
-      left: 16px;
       right: 0;
+      left: 16px;
       height: 3px;
       background: #1daa61;
     }
