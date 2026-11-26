@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -285,7 +286,7 @@
       padding: 0 24px;
     }
 
-    /* Service cards */
+    /* All six service cards */
     .card {
       position: relative;
       isolation: isolate;
@@ -298,6 +299,7 @@
       box-shadow: 0 3px 12px rgba(40, 55, 90, .08);
     }
 
+    /* Thin green line */
     .card::before {
       content: "";
       position: absolute;
@@ -309,8 +311,8 @@
       background: #1daa61;
     }
 
-    /* First card: full-width lobby image */
-    .card:first-child img {
+    /* Card images */
+    .card img {
       position: absolute;
       top: 19px;
       right: 0;
@@ -320,8 +322,8 @@
       object-fit: cover;
     }
 
-    /* Horizontal green gradient divider */
-    .card:first-child::after {
+    /* Thick horizontal gradient divider */
+    .card::after {
       content: "";
       position: absolute;
       top: calc(19px + (100% - 19px) / 2);
@@ -534,6 +536,7 @@
 
 <body>
 
+  <!-- Navigation -->
   <header class="top-bar">
     <nav>
       <div class="logo">
@@ -612,15 +615,31 @@
     </p>
 
     <main id="services">
+
       <section class="card">
-        <img src="lobby.jpg" alt="לובי בניין נקי">
+        <img src="lobby.jpg" alt="לובי הבניין">
       </section>
 
-      <section class="card"></section>
-      <section class="card"></section>
-      <section class="card"></section>
-      <section class="card"></section>
-      <section class="card"></section>
+      <section class="card">
+        <img src="stairs.jpg" alt="חדר מדרגות">
+      </section>
+
+      <section class="card">
+        <img src="elevator.jpg" alt="מעלית הבניין">
+      </section>
+
+      <section class="card">
+        <img src="entrance.jpg" alt="כניסה לבניין">
+      </section>
+
+      <section class="card">
+        <img src="trash.jpg" alt="אזור פינוי אשפה">
+      </section>
+
+      <section class="card">
+        <img src="parking.jpg" alt="חניון הבניין">
+      </section>
+
     </main>
   </section>
 
