@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GA Cleaning</title>
 
@@ -17,15 +17,16 @@
       background: #f7f8fc;
     }
 
+    /* Navigation */
     .top-bar {
       position: sticky;
       top: 0;
       z-index: 10;
       padding: 18px 32px;
-      background: rgba(221, 231, 254, 0.88);
+      background: rgba(221, 231, 254, .88);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 4px 16px rgba(40, 55, 90, 0.12);
+      box-shadow: 0 4px 16px rgba(40, 55, 90, .12);
     }
 
     .top-bar nav {
@@ -34,7 +35,7 @@
       justify-content: space-between;
       align-items: center;
       max-width: 1100px;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .logo img {
@@ -56,17 +57,17 @@
 
     .mobile-menu {
       display: none;
-      border: none;
+      padding: 0;
+      border: 0;
       background: transparent;
       color: #0033fc;
       font-size: 30px;
       font-weight: bold;
-      cursor: pointer;
-      padding: 0;
       line-height: 1;
+      cursor: pointer;
     }
 
-    /* Hero section */
+    /* Hero */
     .hero-image {
       position: relative;
       width: 100%;
@@ -91,8 +92,8 @@
       inset: 0;
       background: linear-gradient(
         120deg,
-        rgba(39, 104, 185, 0.35),
-        rgba(39, 104, 185, 0.18)
+        rgba(39, 104, 185, .35),
+        rgba(39, 104, 185, .18)
       );
       pointer-events: none;
     }
@@ -102,10 +103,10 @@
       z-index: 1;
       top: 50%;
       right: 8%;
-      transform: translateY(-50%);
       width: 84%;
+      transform: translateY(-50%);
       text-align: right;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .35);
     }
 
     .hero-content h1 {
@@ -116,9 +117,9 @@
       line-height: 1.3;
     }
 
-    .hero-content .main-text {
+    .main-text {
       margin: 0 0 12px;
-      color: #fff;
+      color: white;
       font-size: clamp(32px, 5vw, 60px);
       font-weight: 700;
       line-height: 1.2;
@@ -148,13 +149,13 @@
       padding: 12px 24px;
       border: 1px solid transparent;
       border-radius: 999px;
-      color: #fff;
+      color: white;
       font-size: 16px;
       font-weight: 600;
       text-align: center;
       text-decoration: none;
       direction: rtl;
-      transition: background-color 0.2s ease, transform 0.2s ease;
+      transition: background-color .2s, transform .2s;
     }
 
     .hero-button:hover {
@@ -171,22 +172,22 @@
 
     .hero-button.secondary {
       border-color: #ececee;
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, .14);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
     }
 
     .hero-button.secondary:hover {
-      background: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, .24);
     }
 
-    /* About section */
+    /* About */
     .about-heading {
-      text-align: right;
-      direction: rtl;
+      max-width: 1000px;
       margin: 85px auto 60px;
       padding: 0 24px;
-      max-width: 1000px;
+      direction: rtl;
+      text-align: right;
     }
 
     .about-heading h2 {
@@ -195,7 +196,6 @@
       font-size: clamp(20px, 2.2vw, 26px);
       font-weight: 600;
       line-height: 1.3;
-      text-align: right;
     }
 
     .about-heading h3 {
@@ -204,13 +204,10 @@
       font-size: clamp(26px, 4vw, 48px);
       font-weight: 700;
       line-height: 1.2;
-      text-align: right;
     }
 
     .about-description {
       max-width: 900px;
-      margin: 0;
-      text-align: right;
     }
 
     .about-description p {
@@ -219,7 +216,6 @@
       font-size: clamp(21px, 2.6vw, 30px);
       font-weight: 400;
       line-height: 1.7;
-      text-align: right;
     }
 
     .about-badges {
@@ -247,10 +243,10 @@
       text-align: center;
     }
 
-    /* Services section */
+    /* Services */
     .services-section {
-      background: #dde7fe;
       padding: 65px 0 40px;
+      background: #dde7fe;
     }
 
     .services-heading {
@@ -285,23 +281,22 @@
 
     main {
       max-width: 900px;
-      margin: 0 auto;
+      margin: auto;
       padding: 0 24px;
     }
 
-    /* Six blank service cards */
+    /* Service cards */
     .card {
       position: relative;
       min-height: 300px;
       margin: 24px 0;
       padding: 32px;
-      border-radius: 16px;
-      background: #ffffff;
-      box-shadow: 0 3px 12px rgba(40, 55, 90, 0.08);
       overflow: hidden;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 3px 12px rgba(40, 55, 90, .08);
     }
 
-    /* Full-width green line */
     .card::before {
       content: "";
       position: absolute;
@@ -313,7 +308,27 @@
       background: #1daa61;
     }
 
-    /* Quote process section */
+    /* First card image */
+    .card:first-child img {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 46%;
+      height: calc(100% - 20px);
+      object-fit: cover;
+    }
+
+    .card:first-child::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 46%;
+      width: 7px;
+      height: calc(100% - 20px);
+      background: linear-gradient(to right, #99e65c, #1daa61);
+    }
+
+    /* Quote process */
     .quote-process-section {
       min-height: 300px;
       padding: 55px 24px 70px;
@@ -335,14 +350,41 @@
       line-height: 1.3;
     }
 
-    /* Desktop logo */
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 58px;
+      height: 58px;
+      border: 4px solid #1daa61;
+      border-radius: 50%;
+      background: white;
+      color: #1daa61;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 0 12px 4px #d9fdd3;
+      transition: transform .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Desktop */
     @media (min-width: 768px) {
       .logo {
         transform: translateX(55px);
       }
     }
 
-    /* Mobile layout */
+    /* Mobile */
     @media (max-width: 520px) {
       .top-bar {
         padding: 14px 18px;
@@ -355,7 +397,6 @@
       .mobile-menu {
         display: block;
         margin-left: auto;
-        color: #0033fc;
       }
 
       .top-bar nav {
@@ -373,7 +414,6 @@
       }
 
       .hero-content {
-        top: 50%;
         right: 6%;
         width: 88%;
       }
@@ -382,13 +422,13 @@
         font-size: 20px;
       }
 
-      .hero-content .main-text {
+      .main-text {
         font-size: 40px;
       }
 
       .hero-content .description {
-        font-size: 22px;
         color: #ececee;
+        font-size: 22px;
       }
 
       .hero-buttons {
@@ -403,7 +443,6 @@
         font-size: 17px;
       }
 
-      /* Mobile About section */
       .about-heading {
         margin-top: 65px;
         padding: 0 20px;
@@ -414,17 +453,16 @@
       }
 
       .about-heading h3 {
-        font-size: 30px;
         color: #060C13;
+        font-size: 30px;
       }
 
       .about-description p {
+        color: #757584;
         font-size: 21px;
         line-height: 1.6;
-        color: #757584;
       }
 
-      /* Mobile badges */
       .about-badges {
         display: grid;
         grid-template-columns: repeat(2, max-content);
@@ -432,7 +470,6 @@
         justify-items: start;
         gap: 10px;
         margin-top: 28px;
-        direction: rtl;
       }
 
       .about-badge {
@@ -442,25 +479,27 @@
         font-size: 16px;
       }
 
-      /* Mobile services section */
       .services-section {
         padding: 45px 0 30px;
       }
 
+      .services-heading,
+      .services-main-title,
+      .services-subtitle {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
       .services-heading {
-        padding: 0 20px;
         font-size: 24px;
-        text-align: center;
       }
 
       .services-main-title {
         font-size: 30px;
-        padding: 0 20px;
       }
 
       .services-subtitle {
         font-size: 20px;
-        padding: 0 20px;
       }
 
       .card {
@@ -477,46 +516,15 @@
       .quote-process-section h2 {
         font-size: 20px;
       }
-    }
 
-    /* Floating WhatsApp button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      left: 25px;
-      z-index: 9999;
-      width: 58px;
-      height: 58px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 4px solid #1daa61;
-      border-radius: 50%;
-      background: #ffffff;
-      color: #1daa61;
-      font-family: Arial, sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 0 12px 4px #d9fdd3;
-      transition: transform 0.2s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* Mobile WhatsApp button */
-    @media (max-width: 520px) {
       .whatsapp-float {
-        width: 54px;
-        height: 54px;
         bottom: 18px;
         left: 18px;
+        width: 54px;
+        height: 54px;
         font-size: 18px;
       }
     }
-
   </style>
 </head>
 
@@ -534,22 +542,19 @@
         <a href="#contact">צור קשר</a>
       </div>
 
-      <button class="mobile-menu" aria-label="פתח תפריט" type="button">
+      <button class="mobile-menu" type="button" aria-label="פתח תפריט">
         ☰
       </button>
     </nav>
   </header>
 
-  <!-- Hero section -->
   <section class="hero-image">
     <img src="istock-903249194.jpg" alt="ניקיון מקצועי">
 
     <div class="hero-content">
       <h1>ניקיון בניינים מקצועי באזור הקריות</h1>
 
-      <p class="main-text">
-        הבניין שלכם מתוחזק בלי דאגות
-      </p>
+      <p class="main-text">הבניין שלכם מתוחזק בלי דאגות</p>
 
       <p class="description">
         שירותי ניקיון שוטפים לבנייני מגורים, עם הקפדה על איכות, אמינות ושירות אישי.
@@ -558,19 +563,17 @@
       <div class="hero-buttons">
         <a class="hero-button primary" href="#services">למידע נוסף</a>
 
-        <a
-          class="hero-button secondary"
-          href="https://wa.me/YOURNUMBER"
-          target="_blank"
-          rel="noopener noreferrer"
-        >יצירת קשר ב-WhatsApp</a>
+        <a class="hero-button secondary"
+           href="https://wa.me/YOURNUMBER"
+           target="_blank"
+           rel="noopener noreferrer">
+          יצירת קשר ב-WhatsApp
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- About us section -->
   <section class="about-heading" id="about">
-
     <h2>מי אנחנו</h2>
 
     <h3>
@@ -590,49 +593,39 @@
       <div class="about-badge">ניקיון יסודי</div>
       <div class="about-badge">יחס אישי</div>
     </div>
-
   </section>
 
-  <!-- Services section -->
   <section class="services-section">
-
     <h2 class="services-heading">קטלוג השירותים</h2>
 
-    <h3 class="services-main-title">
-      כל מה שהבניין שלכם צריך
-    </h3>
+    <h3 class="services-main-title">כל מה שהבניין שלכם צריך</h3>
 
     <p class="services-subtitle">
       בחרו שירות כדי להכיר את היתרונות שלו.
     </p>
 
     <main id="services">
+      <section class="card">
+        <img src="lobby.jpg" alt="לובי בניין נקי">
+      </section>
 
-      <!-- Six blank cards -->
       <section class="card"></section>
       <section class="card"></section>
       <section class="card"></section>
       <section class="card"></section>
       <section class="card"></section>
-      <section class="card"></section>
-
     </main>
-
   </section>
 
-  <!-- Quote process section -->
   <section class="quote-process-section" id="contact">
     <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
   </section>
 
-  <!-- Floating WhatsApp button -->
-  <a
-    href="https://wa.me/YOURNUMBER"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contact us on WhatsApp"
-  >
+  <a class="whatsapp-float"
+     href="https://wa.me/YOURNUMBER"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contact us on WhatsApp">
     WA
   </a>
 
