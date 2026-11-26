@@ -2,724 +2,229 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GA Cleaning</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #202a3a;
-      background: #f7f8fc;
-    }
-
-    /* Navigation */
-    .top-bar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      padding: 18px 32px;
-      background: rgba(221, 231, 254, .88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 4px 16px rgba(40, 55, 90, .12);
-    }
-
-    .top-bar nav {
-      display: flex;
-      direction: ltr;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .logo img {
-      display: block;
-      height: 30px;
-      width: auto;
-    }
-
-    .links {
-      display: flex;
-      direction: rtl;
-      gap: 24px;
-    }
-
-    .links a {
-      color: #060C13;
-      text-decoration: none;
-    }
-
-    .mobile-menu {
-      display: none;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: #0033fc;
-      font-size: 30px;
-      font-weight: bold;
-      line-height: 1;
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero-image {
-      position: relative;
-      width: 100%;
-      height: clamp(240px, 40vw, 520px);
-      overflow: hidden;
-      border-bottom: 24px solid transparent;
-      border-image: linear-gradient(to right, #4a80c4, #24446f) 1;
-    }
-
-    .hero-image > img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: blur(2px);
-      transform: scale(1.03);
-    }
-
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        rgba(39, 104, 185, .35),
-        rgba(39, 104, 185, .18)
-      );
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      right: 8%;
-      width: 84%;
-      transform: translateY(-50%);
-      text-align: right;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, .35);
-    }
-
-    .hero-content h1 {
-      margin: 0 0 10px;
-      color: #99e65c;
-      font-size: clamp(16px, 2vw, 24px);
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .main-text {
-      margin: 0 0 12px;
-      color: white;
-      font-size: clamp(32px, 5vw, 60px);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .hero-content .description {
-      margin: 0;
-      color: #ececee;
-      font-size: clamp(18px, 2.4vw, 28px);
-      line-height: 1.4;
-    }
-
-    .hero-buttons {
-      display: flex;
-      direction: ltr;
-      justify-content: center;
-      gap: 14px;
-      margin: 90px auto 0;
-      text-shadow: none;
-    }
-
-    .hero-button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 48px;
-      padding: 12px 24px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      direction: rtl;
-      transition: background-color .2s, transform .2s;
-    }
-
-    .hero-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-button.primary {
-      background: #1daa61;
-    }
-
-    .hero-button.primary:hover {
-      background: #188d51;
-    }
-
-    .hero-button.secondary {
-      border-color: #ececee;
-      background: rgba(255, 255, 255, .14);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-
-    .hero-button.secondary:hover {
-      background: rgba(255, 255, 255, .24);
-    }
-
-    /* About */
-    .about-heading {
-      max-width: 1000px;
-      margin: 85px auto 60px;
-      padding: 0 24px;
-      direction: rtl;
-      text-align: right;
-    }
-
-    .about-heading h2 {
-      margin: 0;
-      color: #1daa61;
-      font-size: clamp(20px, 2.2vw, 26px);
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .about-heading h3 {
-      margin: 14px 0 28px;
-      color: #060C13;
-      font-size: clamp(26px, 4vw, 48px);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .about-description {
-      max-width: 900px;
-    }
-
-    .about-description p {
-      margin: 0 0 20px;
-      color: #757584;
-      font-size: clamp(21px, 2.6vw, 30px);
-      font-weight: 400;
-      line-height: 1.7;
-    }
-
-    .about-badges {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 35px;
-      direction: rtl;
-    }
-
-    .about-badge {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 145px;
-      min-height: 46px;
-      padding: 8px 22px;
-      border: 2px solid #24446f;
-      border-radius: 999px;
-      background: #dde7fe;
-      color: #24446f;
-      font-size: 19px;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    /* Services */
-    .services-section {
-      padding: 65px 0 40px;
-      background: #dde7fe;
-    }
-
-    .services-heading {
-      max-width: 900px;
-      margin: 0 auto 30px;
-      padding: 0 24px;
-      color: #1daa61;
-      font-size: 24px;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .services-main-title {
-      margin: 0 auto 18px;
-      padding: 0 24px;
-      color: #060C13;
-      font-size: clamp(26px, 4vw, 48px);
-      font-weight: 700;
-      line-height: 1.2;
-      text-align: center;
-    }
-
-    .services-subtitle {
-      margin: 0 auto 35px;
-      padding: 0 24px;
-      color: #757584;
-      font-size: clamp(18px, 2vw, 22px);
-      font-weight: 400;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 0 24px;
-    }
-
-    /* Service cards */
-    .card {
-      position: relative;
-      isolation: isolate;
-      min-height: 300px;
-      margin: 24px 0;
-      padding: 32px;
-      overflow: hidden;
-      border-radius: 16px;
-      background: white;
-      box-shadow: 0 3px 12px rgba(40, 55, 90, .08);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 16px;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: #1daa61;
-    }
-
-    .card img {
-      position: absolute;
-      top: 19px;
-      right: 0;
-      display: block;
-      width: 100%;
-      height: calc((100% - 19px) / 2);
-      object-fit: cover;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      top: calc(19px + (100% - 19px) / 2);
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 7px;
-      background: linear-gradient(to right, #99e65c, #1daa61);
-    }
-
-    /* Card text */
-    .card-content {
-      position: absolute;
-      top: 56%;
-      right: 32px;
-      left: 32px;
-      z-index: 1;
-      direction: rtl;
-      text-align: right;
-    }
-
-    .card-category {
-      margin: 0 0 8px;
-      color: #1daa61;
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    .card-title {
-      margin: 0 0 12px;
-      color: #060C13;
-      font-size: clamp(24px, 3vw, 34px);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .card-description {
-      margin: 0;
-      color: #757584;
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.6;
-    }
-
-    /* Quote process */
-    .quote-process-section {
-      min-height: 300px;
-      padding: 55px 24px 70px;
-      background: linear-gradient(
-        135deg,
-        #254570 0%,
-        #2b4c76 50%,
-        #31547e 100%
-      );
-      direction: rtl;
-      text-align: center;
-    }
-
-    .quote-process-section h2 {
-      margin: 0;
-      color: #99e65c;
-      font-size: clamp(16px, 2vw, 24px);
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    /* WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      left: 25px;
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 58px;
-      height: 58px;
-      border: 4px solid #1daa61;
-      border-radius: 50%;
-      background: white;
-      color: #1daa61;
-      font-family: Arial, sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 0 12px 4px #d9fdd3;
-      transition: transform .2s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* Desktop */
-    @media (min-width: 768px) {
-      .logo {
-        transform: translateX(55px);
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 520px) {
-      .top-bar {
-        padding: 14px 18px;
-      }
-
-      .links {
-        display: none;
-      }
-
-      .mobile-menu {
-        display: block;
-        margin-left: auto;
-      }
-
-      .top-bar nav {
-        direction: ltr;
-      }
-
-      .hero-image {
-        height: calc(90svh - 100px);
-        min-height: 0;
-        max-height: 800px;
-      }
-
-      .hero-image > img {
-        object-position: 65% 20%;
-      }
-
-      .hero-content {
-        right: 6%;
-        width: 88%;
-      }
-
-      .hero-content h1 {
-        font-size: 20px;
-      }
-
-      .main-text {
-        font-size: 40px;
-      }
-
-      .hero-content .description {
-        color: #ececee;
-        font-size: 22px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 50px;
-      }
-
-      .hero-button {
-        width: 100%;
-        min-height: 54px;
-        font-size: 17px;
-      }
-
-      .about-heading {
-        margin-top: 65px;
-        padding: 0 20px;
-      }
-
-      .about-heading h2 {
-        font-size: 24px;
-      }
-
-      .about-heading h3 {
-        color: #060C13;
-        font-size: 30px;
-      }
-
-      .about-description p {
-        color: #757584;
-        font-size: 21px;
-        line-height: 1.6;
-      }
-
-      .about-badges {
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
-        justify-content: start;
-        justify-items: start;
-        gap: 10px;
-        margin-top: 28px;
-      }
-
-      .about-badge {
-        min-width: 135px;
-        min-height: 42px;
-        padding: 7px 16px;
-        font-size: 16px;
-      }
-
-      .services-section {
-        padding: 45px 0 30px;
-      }
-
-      .services-heading,
-      .services-main-title,
-      .services-subtitle {
-        padding-right: 20px;
-        padding-left: 20px;
-      }
-
-      .services-heading {
-        font-size: 24px;
-      }
-
-      .services-main-title {
-        font-size: 30px;
-      }
-
-      .services-subtitle {
-        font-size: 20px;
-      }
-
-      .card {
-        min-height: 260px;
-        margin: 20px 0;
-        padding: 24px;
-      }
-
-      .card-content {
-        right: 20px;
-        left: 20px;
-      }
-
-      .card-category {
-        font-size: 16px;
-      }
-
-      .card-title {
-        font-size: 25px;
-      }
-
-      .card-description {
-        font-size: 18px;
-      }
-
-      .quote-process-section {
-        min-height: 260px;
-        padding: 45px 20px 60px;
-      }
-
-      .quote-process-section h2 {
-        font-size: 20px;
-      }
-
-      .whatsapp-float {
-        bottom: 18px;
-        left: 18px;
-        width: 54px;
-        height: 54px;
-        font-size: 18px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GA Cleaning</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#202a3a;background:#f7f8fc}
+
+/* Navigation */
+.top-bar{position:sticky;top:0;z-index:10;padding:18px 32px;background:rgba(221,231,254,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 16px rgba(40,55,90,.12)}
+.top-bar nav{display:flex;direction:ltr;justify-content:space-between;align-items:center;max-width:1100px;margin:auto}
+.logo img{display:block;height:30px;width:auto}
+.links{display:flex;direction:rtl;gap:24px}
+.links a{color:#060C13;text-decoration:none}
+.mobile-menu{display:none;padding:0;border:0;background:transparent;color:#0033fc;font-size:30px;font-weight:bold;line-height:1;cursor:pointer}
+
+/* Hero */
+.hero-image{position:relative;width:100%;height:clamp(240px,40vw,520px);overflow:hidden;border-bottom:24px solid transparent;border-image:linear-gradient(to right,#4a80c4,#24446f) 1}
+.hero-image>img{display:block;width:100%;height:100%;object-fit:cover;filter:blur(2px);transform:scale(1.03)}
+.hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(39,104,185,.35),rgba(39,104,185,.18));pointer-events:none}
+.hero-content{position:absolute;z-index:1;top:50%;right:8%;width:84%;transform:translateY(-50%);text-align:right;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.hero-content h1{margin:0 0 10px;color:#99e65c;font-size:clamp(16px,2vw,24px);font-weight:600;line-height:1.3}
+.main-text{margin:0 0 12px;color:white;font-size:clamp(32px,5vw,60px);font-weight:700;line-height:1.2}
+.hero-content .description{margin:0;color:#ececee;font-size:clamp(18px,2.4vw,28px);line-height:1.4}
+.hero-buttons{display:flex;direction:ltr;justify-content:center;gap:14px;margin:90px auto 0;text-shadow:none}
+.hero-button{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 24px;border:1px solid transparent;border-radius:999px;color:white;font-size:16px;font-weight:600;text-align:center;text-decoration:none;direction:rtl;transition:background-color .2s,transform .2s}
+.hero-button:hover{transform:translateY(-2px)}
+.hero-button.primary{background:#1daa61}
+.hero-button.primary:hover{background:#188d51}
+.hero-button.secondary{border-color:#ececee;background:rgba(255,255,255,.14);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hero-button.secondary:hover{background:rgba(255,255,255,.24)}
+
+/* About */
+.about-heading{max-width:1000px;margin:85px auto 60px;padding:0 24px;direction:rtl;text-align:right}
+.about-heading h2,.services-heading{color:#1daa61;font-weight:600}
+.about-heading h2{margin:0;font-size:clamp(20px,2.2vw,26px);line-height:1.3}
+.about-heading h3{margin:14px 0 28px;color:#060C13;font-size:clamp(26px,4vw,48px);font-weight:700;line-height:1.2}
+.about-description{max-width:900px}
+.about-description p{margin:0 0 20px;color:#757584;font-size:clamp(21px,2.6vw,30px);line-height:1.7}
+.about-badges{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:16px;margin-top:35px;direction:rtl}
+.about-badge{display:flex;justify-content:center;align-items:center;min-width:145px;min-height:46px;padding:8px 22px;border:2px solid #24446f;border-radius:999px;background:#dde7fe;color:#24446f;font-size:19px;font-weight:600;text-align:center}
+
+/* Services */
+.services-section{padding:65px 0 40px;background:#dde7fe}
+.services-heading{max-width:900px;margin:0 auto 30px;padding:0 24px;font-size:24px;text-align:center}
+.services-main-title{margin:0 auto 18px;padding:0 24px;color:#060C13;font-size:clamp(26px,4vw,48px);font-weight:700;line-height:1.2;text-align:center}
+.services-subtitle{margin:0 auto 35px;padding:0 24px;color:#757584;font-size:clamp(18px,2vw,22px);line-height:1.6;text-align:center}
+main{max-width:900px;margin:auto;padding:0 24px}
+
+/* Cards */
+.card{position:relative;isolation:isolate;height:430px;min-height:430px;margin:24px 0;padding:32px;overflow:hidden;border-radius:16px;background:white;box-shadow:0 3px 12px rgba(40,55,90,.08)}
+.card::before,.card::after{content:"";position:absolute;right:0;left:0;width:100%}
+.card::before{top:16px;height:3px;background:#1daa61}
+.card img{position:absolute;top:19px;right:0;display:block;width:100%;height:50%;object-fit:cover}
+.card::after{top:calc(19px + 50%);height:7px;background:linear-gradient(to right,#99e65c,#1daa61)}
+.card-content{position:absolute;top:calc(69% + 12px);right:32px;left:32px;z-index:1;direction:rtl;text-align:right}
+.card-category{margin:0 0 8px;color:#1daa61;font-size:17px;font-weight:600}
+.card-title{margin:0 0 12px;color:#060C13;font-size:clamp(24px,3vw,34px);font-weight:700;line-height:1.2}
+.card-description{margin:0;color:#757584;font-size:clamp(17px,2vw,21px);line-height:1.6}
+
+/* Quote */
+.quote-process-section{min-height:300px;padding:55px 24px 70px;background:linear-gradient(135deg,#254570,#2b4c76 50%,#31547e);direction:rtl;text-align:center}
+.quote-process-section h2{margin:0;color:#99e65c;font-size:clamp(16px,2vw,24px);font-weight:600;line-height:1.3}
+
+/* WhatsApp */
+.whatsapp-float{position:fixed;bottom:25px;left:25px;z-index:9999;display:flex;justify-content:center;align-items:center;width:58px;height:58px;border:4px solid #1daa61;border-radius:50%;background:white;color:#1daa61;font-size:20px;font-weight:800;text-decoration:none;box-shadow:0 0 12px 4px #d9fdd3;transition:transform .2s}
+.whatsapp-float:hover{transform:scale(1.1)}
+
+/* Desktop */
+@media(min-width:768px){.logo{transform:translateX(55px)}}
+
+/* Mobile */
+@media(max-width:520px){
+.top-bar{padding:14px 18px}
+.top-bar nav{direction:ltr}
+.links{display:none}
+.mobile-menu{display:block;margin-left:auto}
+.hero-image{height:calc(90svh - 100px);min-height:0;max-height:800px}
+.hero-image>img{object-position:65% 20%}
+.hero-content{right:6%;width:88%}
+.hero-content h1{font-size:20px}
+.main-text{font-size:40px}
+.hero-content .description{color:#ececee;font-size:22px}
+.hero-buttons{flex-direction:column;gap:12px;margin-top:50px}
+.hero-button{width:100%;min-height:54px;font-size:17px}
+.about-heading{margin-top:65px;padding:0 20px}
+.about-heading h2,.services-heading{font-size:24px}
+.about-heading h3{color:#060C13;font-size:30px}
+.about-description p{color:#757584;font-size:21px;line-height:1.6}
+.about-badges{display:grid;grid-template-columns:repeat(2,max-content);justify-content:start;justify-items:start;gap:10px;margin-top:28px}
+.about-badge{min-width:135px;min-height:42px;padding:7px 16px;font-size:16px}
+.services-section{padding:45px 0 30px}
+.services-heading,.services-main-title,.services-subtitle{padding-right:20px;padding-left:20px}
+.services-main-title{font-size:30px}
+.services-subtitle{font-size:20px}
+.card{height:470px;min-height:470px;margin:20px 0;padding:24px}
+.card-content{top:calc(69% + 12px);right:20px;left:20px}
+.card-category{font-size:16px}
+.card-title{font-size:25px}
+.card-description{font-size:18px;line-height:1.6}
+.quote-process-section{min-height:260px;padding:45px 20px 60px}
+.quote-process-section h2{font-size:20px}
+.whatsapp-float{bottom:18px;left:18px;width:54px;height:54px;font-size:18px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <header class="top-bar">
-    <nav>
-      <div class="logo">
-        <img src="ga-icon.png" alt="GA Cleaning">
-      </div>
+<!-- Navigation -->
+<header class="top-bar">
+<nav>
+<div class="logo"><img src="ga-icon.png" alt="GA Cleaning"></div>
+<div class="links">
+<a href="#">ראשי</a>
+<a href="#about">אודות</a>
+<a href="#contact">צור קשר</a>
+</div>
+<button class="mobile-menu" type="button" aria-label="פתח תפריט">☰</button>
+</nav>
+</header>
 
-      <div class="links">
-        <a href="#">ראשי</a>
-        <a href="#about">אודות</a>
-        <a href="#contact">צור קשר</a>
-      </div>
+<!-- Hero -->
+<section class="hero-image">
+<img src="istock-903249194.jpg" alt="ניקיון מקצועי">
+<div class="hero-content">
+<h1>ניקיון בניינים מקצועי באזור הקריות</h1>
+<p class="main-text">הבניין שלכם מתוחזק בלי דאגות</p>
+<p class="description">שירותי ניקיון שוטפים לבנייני מגורים, עם הקפדה על איכות, אמינות ושירות אישי.</p>
+<div class="hero-buttons">
+<a class="hero-button primary" href="#services">למידע נוסף</a>
+<a class="hero-button secondary" href="https://wa.me/YOURNUMBER" target="_blank" rel="noopener noreferrer">יצירת קשר ב-WhatsApp</a>
+</div>
+</div>
+</section>
 
-      <button class="mobile-menu" type="button" aria-label="פתח תפריט">
-        ☰
-      </button>
-    </nav>
-  </header>
+<!-- About -->
+<section class="about-heading" id="about">
+<h2>מי אנחנו</h2>
+<h3>GA Cleaning מתמחה בניקיון שוטף של בנייני מגורים באזור הקריות</h3>
+<div class="about-description">
+<p>אנו מעניקים לוועדי בתים שירות מקצועי, אמין וקבוע, תוך הקפדה על ניקיון, סדר ותחזוקה של השטחים המשותפים בבניין.</p>
+</div>
+<div class="about-badges">
+<div class="about-badge">אמינות</div>
+<div class="about-badge">שירות קבוע</div>
+<div class="about-badge">ניקיון יסודי</div>
+<div class="about-badge">יחס אישי</div>
+</div>
+</section>
 
-  <!-- Hero -->
-  <section class="hero-image">
-    <img src="istock-903249194.jpg" alt="ניקיון מקצועי">
+<!-- Services -->
+<section class="services-section">
+<h2 class="services-heading">קטלוג השירותים</h2>
+<h3 class="services-main-title">כל מה שהבניין שלכם צריך</h3>
+<p class="services-subtitle">בחרו שירות כדי להכיר את היתרונות שלו.</p>
 
-    <div class="hero-content">
-      <h1>ניקיון בניינים מקצועי באזור הקריות</h1>
+<main id="services">
 
-      <p class="main-text">הבניין שלכם מתוחזק בלי דאגות</p>
+<section class="card">
+<img src="lobby.jpg" alt="לובי הבניין">
+<div class="card-content">
+<p class="card-category">ניקיון פנים</p>
+<h2 class="card-title">ניקיון לובי וכניסה</h2>
+<p class="card-description">ניקיון יסודי של אולמות הכניסה והשטחים המשותפים, כולל שטיפת רצפות והסרת אבק.</p>
+</div>
+</section>
 
-      <p class="description">
-        שירותי ניקיון שוטפים לבנייני מגורים, עם הקפדה על איכות, אמינות ושירות אישי.
-      </p>
+<section class="card">
+<img src="stairs.jpg" alt="חדר מדרגות">
+<div class="card-content">
+<p class="card-category">ניקיון פנים</p>
+<h2 class="card-title">ניקיון חדרי מדרגות</h2>
+<p class="card-description">שטיפת רצפות באופן קבוע, ניקוי משטחים והסרת אבק לאורך כל חדרי המדרגות בבניין.</p>
+</div>
+</section>
 
-      <div class="hero-buttons">
-        <a class="hero-button primary" href="#services">למידע נוסף</a>
+<section class="card">
+<img src="elevator.jpg" alt="מעלית הבניין">
+<div class="card-content">
+<p class="card-category">ניקיון פנים</p>
+<h2 class="card-title">ניקיון מעליות</h2>
+<p class="card-description">ניקוי רצפת המעלית, הדלתות, המראות והמשטחים הפנימיים לשמירה על סביבת מעלית נקייה ומטופחת.</p>
+</div>
+</section>
 
-        <a class="hero-button secondary"
-           href="https://wa.me/YOURNUMBER"
-           target="_blank"
-           rel="noopener noreferrer">
-          יצירת קשר ב-WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+<section class="card">
+<img src="entrance.jpg" alt="דלתות הכניסה לבניין">
+<div class="card-content">
+<p class="card-category">ניקיון מתמחה</p>
+<h2 class="card-title">ניקוי דלתות כניסה וזכוכית</h2>
+<p class="card-description">הסרת טביעות אצבעות, אבק ולכלוך מדלתות הכניסה ומשטחי הזכוכית לשמירה על מראה נקי ומבריק.</p>
+</div>
+</section>
 
-  <!-- About -->
-  <section class="about-heading" id="about">
-    <h2>מי אנחנו</h2>
+<section class="card">
+<img src="trash.jpg" alt="חדר האשפה">
+<div class="card-content">
+<p class="card-category">היגיינה ותברואה</p>
+<h2 class="card-title">ניקיון חדרי אשפה</h2>
+<p class="card-description">שטיפה וניקוי של חדרי האשפה והאזורים הסמוכים להם, לשמירה על היגיינה, ניקיון וסביבה נעימה.</p>
+</div>
+</section>
 
-    <h3>
-      GA Cleaning מתמחה בניקיון שוטף של בנייני מגורים באזור הקריות
-    </h3>
+<section class="card">
+<img src="parking.jpg" alt="חניון הבניין">
+<div class="card-content">
+<p class="card-category">ניקיון שטחים חיצוניים ומשותפים</p>
+<h2 class="card-title">ניקיון חניונים</h2>
+<p class="card-description">טאטוא שוטף, איסוף פסולת וניקוי רצפות בשטחי החניה המשותפים של הבניין.</p>
+</div>
+</section>
 
-    <div class="about-description">
-      <p>
-        אנו מעניקים לוועדי בתים שירות מקצועי, אמין וקבוע,
-        תוך הקפדה על ניקיון, סדר ותחזוקה של השטחים המשותפים בבניין.
-      </p>
-    </div>
+</main>
+</section>
 
-    <div class="about-badges">
-      <div class="about-badge">אמינות</div>
-      <div class="about-badge">שירות קבוע</div>
-      <div class="about-badge">ניקיון יסודי</div>
-      <div class="about-badge">יחס אישי</div>
-    </div>
-  </section>
+<!-- Quote Process -->
+<section class="quote-process-section" id="contact">
+<h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
+</section>
 
-  <!-- Services -->
-  <section class="services-section">
-    <h2 class="services-heading">קטלוג השירותים</h2>
-
-    <h3 class="services-main-title">כל מה שהבניין שלכם צריך</h3>
-
-    <p class="services-subtitle">
-      בחרו שירות כדי להכיר את היתרונות שלו.
-    </p>
-
-    <main id="services">
-
-      <!-- Card 1: Lobby -->
-      <section class="card">
-        <img src="lobby.jpg" alt="לובי הבניין">
-
-        <div class="card-content">
-          <p class="card-category">ניקיון פנים</p>
-
-          <h2 class="card-title">ניקיון לובי וכניסה</h2>
-
-          <p class="card-description">
-            ניקיון יסודי של אולמות הכניסה והשטחים המשותפים,
-            כולל שטיפת רצפות והסרת אבק.
-          </p>
-        </div>
-      </section>
-
-      <!-- Card 2: Stairs -->
-      <section class="card">
-        <img src="stairs.jpg" alt="חדר מדרגות">
-      </section>
-
-      <!-- Card 3: Elevator -->
-      <section class="card">
-        <img src="elevator.jpg" alt="מעלית הבניין">
-      </section>
-
-      <!-- Card 4: Entrance -->
-      <section class="card">
-        <img src="entrance.jpg" alt="כניסה לבניין">
-      </section>
-
-      <!-- Card 5: Trash -->
-      <section class="card">
-        <img src="trash.jpg" alt="אזור פינוי אשפה">
-      </section>
-
-      <!-- Card 6: Parking -->
-      <section class="card">
-        <img src="parking.jpg" alt="חניון הבניין">
-      </section>
-
-    </main>
-  </section>
-
-  <!-- Quote process -->
-  <section class="quote-process-section" id="contact">
-    <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
-  </section>
-
-  <!-- WhatsApp -->
-  <a class="whatsapp-float"
-     href="https://wa.me/YOURNUMBER"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Contact us on WhatsApp">
-    WA
-  </a>
+<!-- WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/YOURNUMBER" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">WA</a>
 
 </body>
 </html>
