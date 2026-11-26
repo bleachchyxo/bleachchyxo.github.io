@@ -61,9 +61,73 @@ main{max-width:900px;margin:auto;padding:0 24px}
 .card-title{margin:0 0 12px;color:#060C13;font-size:clamp(24px,3vw,34px);font-weight:700;line-height:1.2}
 .card-description{margin:0;color:#757584;font-size:clamp(17px,2vw,21px);line-height:1.6}
 
-/* Quote */
-.quote-process-section{min-height:300px;padding:55px 24px 70px;background:linear-gradient(135deg,#254570,#2b4c76 50%,#31547e);direction:rtl;text-align:center}
-.quote-process-section h2{margin:0;color:#99e65c;font-size:clamp(16px,2vw,24px);font-weight:600;line-height:1.3}
+/* Quote and Contact */
+.quote-process-section{
+min-height:420px;
+padding:65px 24px 70px;
+background:linear-gradient(135deg,#254570,#2b4c76 50%,#31547e);
+direction:rtl;
+text-align:right;
+}
+
+.quote-content{
+max-width:1000px;
+margin:10px auto 0;
+}
+
+.quote-process-section h2{
+margin:0 0 28px;
+color:#99e65c;
+font-size:clamp(16px,2vw,24px);
+font-weight:600;
+line-height:1.3;
+text-align:right;
+}
+
+.quote-process-section h3{
+margin:0 0 24px;
+color:white;
+font-size:clamp(26px,4vw,48px);
+font-weight:700;
+line-height:1.2;
+text-align:right;
+}
+
+.quote-description{
+max-width:900px;
+margin:0;
+color:#ececee;
+font-size:clamp(21px,2.6vw,30px);
+line-height:1.7;
+text-align:right;
+}
+
+.quote-button-wrapper{
+display:flex;
+justify-content:center;
+margin-top:38px;
+}
+
+.quote-button{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+min-height:54px;
+padding:14px 34px;
+border:2px solid white;
+border-radius:999px;
+background:white;
+color:#2b4c76;
+font-size:19px;
+font-weight:700;
+text-decoration:none;
+transition:background-color .2s,transform .2s;
+}
+
+.quote-button:hover{
+background:#dde7fe;
+transform:translateY(-2px);
+}
 
 /* WhatsApp */
 .whatsapp-float{position:fixed;bottom:25px;left:25px;z-index:9999;display:flex;justify-content:center;align-items:center;width:58px;height:58px;border:4px solid #1daa61;border-radius:50%;background:white;color:#1daa61;font-size:20px;font-weight:800;text-decoration:none;box-shadow:0 0 12px 4px #d9fdd3;transition:transform .2s}
@@ -101,8 +165,42 @@ main{max-width:900px;margin:auto;padding:0 24px}
 .card-category{font-size:16px}
 .card-title{font-size:25px}
 .card-description{font-size:18px;line-height:1.6}
-.quote-process-section{min-height:260px;padding:45px 20px 60px}
-.quote-process-section h2{font-size:20px}
+
+.quote-process-section{
+min-height:0;
+padding:50px 20px 55px;
+}
+
+.quote-content{
+margin-top:10px;
+}
+
+.quote-process-section h2{
+font-size:20px;
+margin-bottom:24px;
+}
+
+.quote-process-section h3{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.quote-description{
+font-size:21px;
+line-height:1.6;
+}
+
+.quote-button-wrapper{
+margin-top:30px;
+}
+
+.quote-button{
+width:auto;
+min-height:52px;
+padding:12px 28px;
+font-size:17px;
+}
+
 .whatsapp-float{bottom:18px;left:18px;width:54px;height:54px;font-size:18px}
 }
 </style>
@@ -214,7 +312,21 @@ main{max-width:900px;margin:auto;padding:0 24px}
 </section>
 
 <section class="quote-process-section" id="contact">
+<div class="quote-content">
 <h2>כך מתבצע תהליך קבלת הצעת המחיר</h2>
+
+<h3>צעדים ברורים לניהול כל שירות</h3>
+
+<p class="quote-description">
+אנו מתאמים את השירות משלב מיפוי הצרכים ועד למעקב אחר ביצועו.
+</p>
+
+<div class="quote-button-wrapper">
+<a class="quote-button" href="https://wa.me/YOURNUMBER" target="_blank" rel="noopener noreferrer">
+קבלת הצעת מחיר
+</a>
+</div>
+</div>
 </section>
 
 <a class="whatsapp-float" href="https://wa.me/YOURNUMBER" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">WA</a>
